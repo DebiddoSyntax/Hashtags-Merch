@@ -1,0 +1,96 @@
+
+{
+    
+    
+    "products": [
+    { 
+        "id": 1,
+        "image": ".Assets/Butterflytshirt.png", 
+        "title": "Male Butterfly T-shirt", 
+        "price": 14340, 
+        "category": "Butterfly", 
+        "wear": "T-shirt", 
+        "gender":"male",
+        "quantity": 1
+    },
+
+    { 
+        "id": 2,
+        "image": "../Assets/Butterflytshirt.png", 
+        "title": "M Wildthought Sweatshirt", 
+        "price": 18220, 
+        "category": "Wildthought", 
+        "wear": "Sweatshirt", 
+        "gender":"male",
+        "quantity": 1
+    },
+
+    { 
+        "id": 3,
+        "image": "../Assets/Butterflytshirt.png", 
+        "title": "Female Butterfly Hoodie", 
+        "price": 20876, 
+        "category": "Butterfly", 
+        "wear": "Hoodie", 
+        "gender":"female",
+        "quantity": 1
+    },
+
+    { 
+        "id": 4,
+        "image": "../Assets/Butterflytshirt.png", 
+        "title": "Female Wildthought T-shirt", 
+        "price": 23450, 
+        "category": "Wildthought", 
+        "wear": "T-shirt", 
+        "gender":"female",
+        "quantity": 1
+    },
+
+    { 
+        "id": 5,
+        "image": "../Assets/Butterflytshirt.png", 
+        "title": "Male Butterfly T-shirt", 
+        "price": 14340, 
+        "category": "Butterfly", 
+        "wear": "T-shirt", 
+        "gender":"male",
+        "quantity": 1
+    },
+
+    { 
+        "id": 6,
+        "image": "../Assets/Butterflytshirt.png", 
+        "title": "M Wildthought Sweatshirt", 
+        "price": 18220, 
+        "category": "Wildthought", 
+        "wear": "Sweatshirt", 
+        "gender":"male",
+        "quantity": 1
+    },
+
+    { 
+        "id": 7,
+        "image": "../Assets/Butterflytshirt.png", 
+        "title": "Female Butterfly Hoodie", 
+        "price": 20876, 
+        "category": "Butterfly", 
+        "wear": "Hoodie", 
+        "gender":"female",
+        "quantity": 1
+    },
+
+    { 
+        "id": 8,
+        "image": "../Assets/Butterflytshirt.png", 
+        "title": "Female Wildthought T-shirt", 
+        "price": 23450, 
+        "category": "Wildthought", 
+        "wear": "T-shirt", 
+        "gender":"female",
+        "quantity": 1
+    }
+
+
+    ]
+}
