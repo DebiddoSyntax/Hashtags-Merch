@@ -5,8 +5,10 @@
     "products": [
     { 
         "id": 1,
-        "image": ".Assets/Butterflytshirt.png", 
-        "title": "Male Butterfly T-shirt", 
+        "image": "/img/Butterflytshirt.png", 
+        "imageBack": "/img/Butterflyback.png",
+        "title": "Butterfly T-shirt", 
+        "description": "Happiness is like a butterfly, the more you chase it, the more it will evade you, but it you notice the other things around you, it will gently come and sit on your shoulder.",
         "price": 14340, 
         "category": "Butterfly", 
         "wear": "T-shirt", 
@@ -16,8 +18,8 @@
 
     { 
         "id": 2,
-        "image": "../Assets/Butterflytshirt.png", 
-        "title": "M Wildthought Sweatshirt", 
+        "image": "/img/Green.png", 
+        "title": "Butterfly Sweatshirt", 
         "price": 18220, 
         "category": "Wildthought", 
         "wear": "Sweatshirt", 
@@ -27,8 +29,8 @@
 
     { 
         "id": 3,
-        "image": "../Assets/Butterflytshirt.png", 
-        "title": "Female Butterfly Hoodie", 
+        "image": "/img/Purple.png", 
+        "title": "Butterfly Hoodie", 
         "price": 20876, 
         "category": "Butterfly", 
         "wear": "Hoodie", 
@@ -38,8 +40,8 @@
 
     { 
         "id": 4,
-        "image": "../Assets/Butterflytshirt.png", 
-        "title": "Female Wildthought T-shirt", 
+        "image": "/img/Butterflytshirt.png", 
+        "title": "Wildthought T-shirt", 
         "price": 23450, 
         "category": "Wildthought", 
         "wear": "T-shirt", 
@@ -49,8 +51,9 @@
 
     { 
         "id": 5,
-        "image": "../Assets/Butterflytshirt.png", 
-        "title": "Male Butterfly T-shirt", 
+        "image": "/img/Butterflytshirt.png", 
+        "title": "Wildthought Sweatshirt", 
+        "description": "Happiness is like a butterfly, the more you chase it, the more it will evade you, but it you notice the other things around you, it will gently come and sit on your shoulder.",
         "price": 14340, 
         "category": "Butterfly", 
         "wear": "T-shirt", 
@@ -60,8 +63,8 @@
 
     { 
         "id": 6,
-        "image": "../Assets/Butterflytshirt.png", 
-        "title": "M Wildthought Sweatshirt", 
+        "image": "/img/Purple.png", 
+        "title": "Wildthought Hoodie", 
         "price": 18220, 
         "category": "Wildthought", 
         "wear": "Sweatshirt", 
@@ -71,8 +74,8 @@
 
     { 
         "id": 7,
-        "image": "../Assets/Butterflytshirt.png", 
-        "title": "Female Butterfly Hoodie", 
+        "image": "/img/Green.png", 
+        "title": " Hoodie", 
         "price": 20876, 
         "category": "Butterfly", 
         "wear": "Hoodie", 
@@ -82,8 +85,8 @@
 
     { 
         "id": 8,
-        "image": "../Assets/Butterflytshirt.png", 
-        "title": "Female Wildthought T-shirt", 
+        "image": "/img/Butterflytshirt.png", 
+        "title": "T-shirt", 
         "price": 23450, 
         "category": "Wildthought", 
         "wear": "T-shirt", 
