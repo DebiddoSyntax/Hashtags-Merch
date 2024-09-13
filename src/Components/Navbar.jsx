@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../Components/Assets/Logo.png';
 import { FiSearch } from "react-icons/fi";
@@ -7,6 +7,8 @@ import { ImFacebook2 } from "react-icons/im";
 import { FaSquareTwitter, FaSquareInstagram } from "react-icons/fa6";
 import { CartContext, ProductprofileContext } from './Functions/ContextProvider';
 import Data from '../Components/Data.json'
+
+
 
 
 
@@ -78,17 +80,18 @@ const Navbar = () => {
  
 
 
-  const handleSearch = () => {
-    const results = FullProducts.filter(p => p.title.toLowerCase().includes(keyword.toLowerCase()));
-        setFilteredProducts(results);
-  };
 
-
-  const handleEnterkey = (e) => {
-    if(e.key === "Enter") {
-      handleSearch()
+  useEffect(() => {
+    if (keyword.trim() !== '') {
+      const results = FullProducts.filter(p => p.title.toLowerCase().includes(keyword.toLowerCase()));
+      setFilteredProducts(results);
+    } else {
+      setFilteredProducts([]);
     }
-  }
+ }, [keyword]);
+ 
+
+
 
   return (
     <header>
@@ -132,9 +135,8 @@ const Navbar = () => {
                         <div className='w-[100%]'>
                           <div className="flex bg-[#f2f2f2] py-4 px-5 md:px-10 w-[100%] items-center" onClick={(e) => e.stopPropagation()}>
                             <div className='w-[70%] md:w-[50%] mx-auto px-5 flex items-center bg-white rounded-lg border border-gray-300'>
-                              <input type="text" placeholder="Search for product" className='w-[100%]  p-3 focus:outline-none focus:border-transparent' value={keyword} onKeyDown={handleEnterkey} onChange={(e) => setKeyword(e.target.value)}/>
-                             <FiSearch className='text-2xl text-gray-600 mx-1 hover:text-blue-700' onClick={handleSearch} />
-                              {/* <Link to="/searchpage"><FiSearch className='text-2xl text-gray-600 mx-1 hover:text-blue-700' onClick={handleSearch} /></Link> */}
+                              <input type="text" placeholder="Search for product" className='w-[100%]  p-3 focus:outline-none focus:border-transparent' value={keyword} onChange={(e) => setKeyword(e.target.value)}/>
+                             <FiSearch className='text-2xl text-gray-600 mx-1 hover:text-blue-700'  />
                             </div>
                             <HiOutlineX className='text-2xl mx-5 cursor-pointer hover:text-blue-700' onClick={closeSearch}/>
                           </div> 
