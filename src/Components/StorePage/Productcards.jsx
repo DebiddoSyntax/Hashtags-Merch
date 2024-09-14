@@ -59,13 +59,7 @@ const Productcard = ({ product}) => {
 
       <div className="py-5 max-w-full">
         <h3 className="text-[14px] font-semibold text-gray-800">{product.title}</h3>
-        <p className="text-[14px] font-semibold text-blue-700 pt-2">{product.price}</p>
-        {/* <div className='flex pt-2'>
-          <FaStar color='#FFD700' fontSize={18} />
-          <FaStar color='#FFD700' fontSize={18} />
-          <FaStar color='#FFD700' fontSize={18} />
-          <FaStar color='#FFD700' fontSize={18} />
-        </div> */}
+        <p className="text-[14px] font-semibold text-blue-700 pt-2">₦{product.price}</p>
       </div>
 
       {quickcartOpen ? (
