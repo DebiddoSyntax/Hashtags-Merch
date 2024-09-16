@@ -63,8 +63,8 @@ const CartProduct = ({ product }) => {
           <div className=' p-2 text-2xl cursor-pointer' onClick={()=> Increase(product.id, product.size)}><HiMiniPlusSmall /></div>
         </div>
 
-        <div className='ml-10 mt-20 lg:mt-1'>
-          <p>{product.price}</p>
+        <div className='ml-9 mt-20 lg:mt-1'>
+          <p>₦{product.price}</p>
         </div>
 
        

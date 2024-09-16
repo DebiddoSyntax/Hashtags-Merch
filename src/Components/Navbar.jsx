@@ -25,9 +25,9 @@ const Productcard = ({ product, Click}) => {
   return (
       <div className="max-w-96 md:max-w-sm bg-white overflow-hidden h-auto">
             <Link to="/productpage" onClick={()=>{setProfile(product)}}>
-            <div className='bg-[#f2f2f2] p-5 w-48'>
+            <div className='bg-[#f2f2f2] p-5 w-full'>
               <div className='h-full w-full' onClick={Click}>
-                <img className='h-40 w-40 object-contain' src={product.image} alt={product.title} />
+                <img className='h-40 w-full object-contain' src={product.image} alt={product.title} />
               </div>
             </div>
             </Link>
@@ -35,7 +35,7 @@ const Productcard = ({ product, Click}) => {
   
         <div className="py-5 max-w-full">
           <h3 className="text-[14px] font-semibold text-gray-800">{product.title}</h3>
-          <p className="text-[14px] font-semibold text-blue-700 pt-2">{product.price}</p>
+          <p className="text-[14px] font-semibold text-blue-700 pt-2">₦{product.price}</p>
         </div>
   
         

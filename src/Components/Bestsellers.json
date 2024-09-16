@@ -1,0 +1,54 @@
+
+{
+    
+    
+    "products": [
+    { 
+        "id": 1,
+        "image": "/img/Butterflytshirt.png", 
+        "imageBack": "/img/Butterflyback.png",
+        "title": "Butterfly T-shirt", 
+        "description": "Happiness is like a butterfly, the more you chase it, the more it will evade you, but it you notice the other things around you, it will gently come and sit on your shoulder.",
+        "price": 14340, 
+        "category": "Butterfly", 
+        "wear": "T-shirt", 
+        "gender":"male",
+        "quantity": 1
+    },
+
+    { 
+        "id": 2,
+        "image": "/img/Green.png", 
+        "title": "Butterfly Sweatshirt", 
+        "price": 18220, 
+        "category": "Wildthought", 
+        "wear": "Sweatshirt", 
+        "gender":"male",
+        "quantity": 1
+    },
+
+    { 
+        "id": 3,
+        "image": "/img/Purple.png", 
+        "title": "Butterfly Hoodie", 
+        "price": 20876, 
+        "category": "Butterfly", 
+        "wear": "Hoodie", 
+        "gender":"female",
+        "quantity": 1
+    },
+
+    { 
+        "id": 4,
+        "image": "/img/Butterflytshirt.png", 
+        "title": "Wildthought T-shirt", 
+        "price": 23450, 
+        "category": "Wildthought", 
+        "wear": "T-shirt", 
+        "gender":"female",
+        "quantity": 1
+    }
+
+
+    ]
+}

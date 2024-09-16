@@ -160,7 +160,7 @@ const Productcards = () => {
   });
 
   return (
-    <div className='flex'>
+    <div className='flex 3xl:mx-auto pt-20'>
       {/* This is the sidebar code */}
       <div className='hidden md:block ml-5 md:ml-10 mr-5 pt-0 md:mt-10 w-[20%]'>
           <ul className='text-xl font-semibold'>
@@ -242,7 +242,7 @@ const Productcards = () => {
                   ))}
               </div>
 
-              <p className='items-center text-center'>This is a nav button</p>
+              {/* <p className='items-center text-center'>This is a nav button</p> */}
             </div>
         </div>
       </div>

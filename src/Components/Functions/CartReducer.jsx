@@ -29,15 +29,6 @@ const CartReducer = (state, action) => {
              return state.filter(product => !(product.id === action.id && product.size === action.size));
 
 
-        // case "Increase":
-        //     const IndexI = state.findIndex(p=> p.id === action.id && p.size === action.size)
-        //     state[IndexI].quantity = state[IndexI].quantity + 1;
-        //     return [...state];
-
-        // case "Decrease":
-        //     const IndexD = state.findIndex(p=> p.id === action.id && p.size === action.size)
-        //     state[IndexD].quantity = state[IndexD].quantity - 1
-        //     return [...state];
 
         case "Increase": {
             return state.map(product => 

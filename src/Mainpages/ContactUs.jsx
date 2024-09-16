@@ -69,7 +69,16 @@ const ContactUs = () => {
       </div>
 
 
-      <div >
+      <div className='h-[504px] my-28'>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6164023138363!2d3.540816974994843!3d6.443276024090408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf7017f9fc50f%3A0x2ed273c51e74d233!2s3%20Orchid%20Rd%2C%20Ikota%2C%20Lekki%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1726407707737!5m2!1sen!2sng" 
+          width="100%" height="100%" allowfullscreen="" 
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title='map' className=''>
+          </iframe>
+      </div>
+
+
+      <div className='my-20'>
+        <p className='text-center text-2xl font-semibold text-blue-700'>More enquiry? Send us a message.</p>
       <form action="#" method="POST" onSubmit={handleSubmit(onSubmit)} className='my-10 text-center bg-[#f2f2f2] py-10 px-10 mx-10 md:mx-20'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
             <div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Navigationhistory from '../Components/StorePage/Navigationhistory'
+// import Navigationhistory from '../Components/StorePage/Navigationhistory'
 import Productcards from '../Components/StorePage/Productcards'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
@@ -14,7 +14,7 @@ const StorePage = () => {
   
   return (
     <div>
-      <Navigationhistory />
+      {/* <Navigationhistory /> */}
       <div className='flex'>
       <Productcards />
     </div>
