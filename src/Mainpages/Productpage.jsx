@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { CartContext, ProductprofileContext } from '../Components/Functions/ContextProvider';
 import Button from '../Components/Button';
 import { useLocation, Link } from 'react-router-dom';
@@ -32,13 +31,6 @@ const Productpage = () => {
 
   return (
     <div className='mb-24 pt-32'>
-      {/* <div className='mb-7 pt-20 flex px-5 md:px-10 pb-3 text-sm md:text-lg font-medium items-center border-b-[3px] border-solid border-gray-400'>
-        <h3 className='pl-0 pr-3 pt-2 text-gray-500'>Store</h3>
-        <div className='px-1 pt-2 text-gray-500 text-lg md:text-xl'><MdOutlineArrowForwardIos /></div>
-        <h3 className='px-3 pt-2 text-gray-500'>All</h3>
-        <div className='px-1 pt-2 text-gray-500 text-lg md:text-xl'><MdOutlineArrowForwardIos /></div>
-        <h3 className='px-3 pt-2 text-gray-900'>All</h3>
-      </div> */}
 
       <div className='mx-5 md:mx-10 grid grid-cols-1 md:grid-cols-2 mb-10'>
         <div className='bg-[#f2f2f2] p-10 h-96 md:h-auto lg:h-[552px] w-full items-center'>
@@ -83,7 +75,7 @@ const Productpage = () => {
           </div>
 
           <div className='mt-10 text-2xl font-semibold'>
-            <p>{profile.price}</p>
+            <p>₦{profile.price}</p>
           </div>
           <Link to="/cart">
             <Button

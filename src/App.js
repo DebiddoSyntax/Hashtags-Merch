@@ -6,6 +6,8 @@ import StorePage from './Mainpages/StorePage';
 import ContactUs from './Mainpages/ContactUs';
 import Cart from './Mainpages/Cart';
 import Productpage from './Mainpages/Productpage';
+import Play from './Mainpages/Play'
+import Userpage from './Mainpages/Userpage';
 
 
 function App() {
@@ -14,11 +16,13 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/Home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/store" element={<StorePage />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/productpage" element={<Productpage />} />
+        <Route path="/play" element={<Play />} />
+        <Route path="/user" element={<Userpage />} />
       </Routes>
       <Footer />
     </Router>

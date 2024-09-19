@@ -52,7 +52,7 @@
     { 
         "id": 5,
         "image": "/img/Butterflytshirt.png", 
-        "title": "Wildthought Sweatshirt", 
+        "title": "Wildthought T-shirt", 
         "description": "Happiness is like a butterfly, the more you chase it, the more it will evade you, but it you notice the other things around you, it will gently come and sit on your shoulder.",
         "price": 14340, 
         "category": "Butterfly", 
@@ -64,7 +64,7 @@
     { 
         "id": 6,
         "image": "/img/Purple.png", 
-        "title": "Wildthought Hoodie", 
+        "title": "Wildthought Sweatshirt", 
         "price": 18220, 
         "category": "Wildthought", 
         "wear": "Sweatshirt", 

@@ -78,7 +78,7 @@ const ContactUs = () => {
 
 
       <div className='my-20'>
-        <p className='text-center text-2xl font-semibold text-blue-700'>More enquiry? Send us a message.</p>
+        <p className='text-center text-xl md:text-2xl font-semibold text-blue-700'>More enquiry? Send us a message.</p>
       <form action="#" method="POST" onSubmit={handleSubmit(onSubmit)} className='my-10 text-center bg-[#f2f2f2] py-10 px-10 mx-10 md:mx-20'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
             <div>

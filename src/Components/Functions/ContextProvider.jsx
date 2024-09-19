@@ -7,6 +7,7 @@ import CartReducer from './CartReducer';
 
 export const CartContext = createContext();
 export const ProductprofileContext = createContext();
+export const clicktoCloseContext = createContext();
 
 
 
@@ -17,10 +18,11 @@ const ContextProvider = ({ children }) => {
     const [profile, setProfile] = useState({})
 
 
+
 return (
         <ProductprofileContext.Provider value={{profile, setProfile}}>
             <CartContext.Provider value={{cart, dispatch}}>
-            {children}
+                {children}
             </CartContext.Provider>
         </ProductprofileContext.Provider>
 

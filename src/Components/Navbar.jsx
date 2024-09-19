@@ -7,9 +7,7 @@ import { ImFacebook2 } from "react-icons/im";
 import { FaSquareTwitter, FaSquareInstagram } from "react-icons/fa6";
 import { CartContext, ProductprofileContext } from './Functions/ContextProvider';
 import Data from '../Components/Data.json'
-
-
-
+import useClicktoClose from './Functions/useClicktoClose';
 
 
 
@@ -60,6 +58,7 @@ const Navbar = () => {
 
   const toggleSearch = () => {
     setSearchOpen(!searchOpen);
+    setKeyword('')
   };
 
   const closeSearch = () => {
@@ -77,7 +76,9 @@ const Navbar = () => {
   
   const [filteredProducts, setFilteredProducts] = useState([]);
   
- 
+  const closeSearchRef = useClicktoClose(() => {
+    setSearchOpen(false);
+  })
 
 
 
@@ -95,12 +96,12 @@ const Navbar = () => {
 
   return (
     <header>
-        <nav className='fixed flex justify-between items-center h-20 w-full px-5 md:px-10 bg-[#F2F2F2] shadow-lg min-w-screen'>
+        <nav className='fixed z-50 flex justify-between items-center h-20 w-full px-5 md:px-10 bg-[#F2F2F2] shadow-lg min-w-screen'>
           
           {/* this is the logo */}
           <div>
             <div className='w-[100%] md:w-full h-10'>
-              <Link to="/home"><img className="max-w-full max-h-full object-cover object-center" src={Logo} alt="Logo" /></Link>
+              <Link to="/"><img className="max-w-full max-h-full object-cover object-center" src={Logo} alt="Logo" /></Link>
             </div>
           </div>
           {/* ends here */}
@@ -108,7 +109,7 @@ const Navbar = () => {
           {/* this is the main navigation */}
           <ul className='h-16 hidden md:flex text-lg'>
             <li className='p-5 hover:text-blue-700'>
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className='p-5 hover:text-blue-700'>
               <Link to="/store">Store</Link>
@@ -132,7 +133,7 @@ const Navbar = () => {
                   {/* this is the search bar code */}
                     {searchOpen ? (
                       <div className="fixed inset-0 bg-black bg-opacity-50 flex flex-col" >
-                        <div className='w-[100%]'>
+                        <div className='w-[100%]' ref={closeSearchRef} >
                           <div className="flex bg-[#f2f2f2] py-4 px-5 md:px-10 w-[100%] items-center" onClick={(e) => e.stopPropagation()}>
                             <div className='w-[70%] md:w-[50%] mx-auto px-5 flex items-center bg-white rounded-lg border border-gray-300'>
                               <input type="text" placeholder="Search for product" className='w-[100%]  p-3 focus:outline-none focus:border-transparent' value={keyword} onChange={(e) => setKeyword(e.target.value)}/>
@@ -144,7 +145,7 @@ const Navbar = () => {
 
 
                         {filteredProducts.length < 1? <div></div> :
-                        <div className='w-full bg-[#ffffff] h-[90%] mt-3 '>
+                        <div className='w-full mx-auto bg-[#ffffff] h-[90%] mt-3 ' ref={closeSearchRef}>
                           
                             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 w-full mt-10 px-5 md:px-10'>
                                   {filteredProducts.map((product, id) => (
@@ -164,7 +165,7 @@ const Navbar = () => {
                     
                     {/* the search bar code ends here */}
 
-              <div className='hidden md:flex px-1 text-2xl md:text-2xl cursor-pointer hover:text-blue-700'> <HiOutlineUser /> </div>
+                    <Link to="/user"> <div className='hidden md:flex px-1 text-2xl md:text-2xl cursor-pointer hover:text-blue-700'> <HiOutlineUser /> </div> </Link>
           
               <div className='flex text-2xl items-center px-0 md:hidden' onClick={handleNav}>
                 {nav ? <div className='text-[26px] stroke-2 hover:text-blue-700'><HiOutlineX /></div> : <div className='text-[26px] stroke-2 hover:text-blue-700'><HiOutlineMenuAlt3 /></div>}
@@ -174,10 +175,10 @@ const Navbar = () => {
         </nav>
 
 {/* this is the hamburger menu slider */}
-<div className={nav ? 'fixed top-[76px] w-[100%] h-[100%] bg-white p-4 shadow-xl ease-in-out duration-800 md:hidden' : 'fixed top-[-100%]'}>
+<div className={nav ? 'z-50 fixed top-[76px] w-[100%] h-[100%] bg-white p-4 shadow-xl ease-in-out duration-800 md:hidden' : 'fixed top-[-100%]'}>
             <ul className='pt-4 bg-[#f2f2f2]'>
               <li className='p-5'>
-                <Link to="/home" className='flex items-center justify-between hover:text-blue-700' onClick={handleNav}>HOME <span className='text-xl'><HiChevronRight /></span></Link>
+                <Link to="/" className='flex items-center justify-between hover:text-blue-700' onClick={handleNav}>HOME <span className='text-xl'><HiChevronRight /></span></Link>
               </li>
               <li className='p-5'>
                 <Link to="/store" className='flex items-center justify-between hover:text-blue-700' onClick={handleNav}>STORE <span className='text-xl'><HiChevronRight /></span></Link>
@@ -189,7 +190,7 @@ const Navbar = () => {
 
 
             <div className='mt-10 px-4 py-6 border-y-2'>
-              <h3 className='flex items-center justify-between hover:text-blue-700'>MY ACCOUNT <span className='text-xl'><HiOutlineUser /></span></h3>
+              <Link to="/user"><h3 className='flex items-center justify-between hover:text-blue-700' onClick={handleNav}>MY ACCOUNT <span className='text-xl'><HiOutlineUser /></span></h3></Link>
             </div>
 
             <div className='flex items-center text-center mt-16'>
