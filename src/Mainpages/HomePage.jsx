@@ -1,8 +1,7 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import Herosection from '../Components/HomePage/Herosection';
 import Bestsellers from '../Components/HomePage/Bestsellers';
 import Gallery from '../Components/HomePage/Gallery';
-import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 

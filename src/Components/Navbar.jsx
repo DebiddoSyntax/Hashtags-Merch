@@ -1,10 +1,9 @@
 import React, { useContext, useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '../Components/Assets/Logo.png';
+import Logowhite from '../Components/Assets/Logowhite.png';
 import { FiSearch } from "react-icons/fi";
 import { HiOutlineX, HiOutlineMenuAlt3, HiOutlineUser, HiOutlineShoppingBag, HiChevronRight } from "react-icons/hi";
-import { ImFacebook2 } from "react-icons/im";
-import { FaSquareTwitter, FaSquareInstagram } from "react-icons/fa6";
 import { CartContext, ProductprofileContext } from './Functions/ContextProvider';
 import Data from '../Components/Data.json'
 import useClicktoClose from './Functions/useClicktoClose';
@@ -45,10 +44,13 @@ const Productcard = ({ product, Click}) => {
 
 const Navbar = () => {
 
+  const location = useLocation();
+
   // this is the nav menu hamburger states
   const [nav, setNav] = useState(false);
   const handleNav = () => {
         setNav(!nav);
+        setNavbarScroll(false)
       };
   // ends here
 
@@ -80,6 +82,43 @@ const Navbar = () => {
     setSearchOpen(false);
   })
 
+  const [navbarScroll, setNavbarScroll] = useState(false);
+
+  const handleNavScroll = () => {
+    if(window.scrollY <= 80) {
+      setNavbarScroll(true)
+    } else {
+      setNavbarScroll(false)
+    }
+  }
+
+ 
+  useEffect(() => {
+
+    handleNavScroll();
+
+    window.addEventListener('scroll', handleNavScroll);
+
+    return () => window.removeEventListener('scroll', handleNavScroll);
+ }, []);
+
+
+ const navbarClass = () => {
+  if (location.pathname === '/' && navbarScroll) {
+    return 'fixed z-50 flex justify-between items-center text-white h-20 w-full px-5 md:px-10 bg-transparent';
+  } else {
+    return 'fixed z-50 flex justify-between items-center h-20 w-full text-black px-5 md:px-10 bg-[#F2F2F2] shadow-lg';
+  }
+};
+
+const LogoSRC = () => {
+  if (location.pathname === '/' && navbarScroll) {
+    return Logowhite;
+  } else {
+    return Logo;
+  }
+};
+
 
 
   useEffect(() => {
@@ -96,12 +135,12 @@ const Navbar = () => {
 
   return (
     <header>
-        <nav className='fixed z-50 flex justify-between items-center h-20 w-full px-5 md:px-10 bg-[#F2F2F2] shadow-lg min-w-screen'>
+        <nav className={navbarClass()}>
           
           {/* this is the logo */}
           <div>
             <div className='w-[100%] md:w-full h-10'>
-              <Link to="/"><img className="max-w-full max-h-full object-cover object-center" src={Logo} alt="Logo" /></Link>
+              <Link to="/"><img className="max-w-full max-h-full object-cover object-center" src={LogoSRC()} alt="Logo" /></Link>
             </div>
           </div>
           {/* ends here */}
@@ -136,10 +175,10 @@ const Navbar = () => {
                         <div className='w-[100%]' ref={closeSearchRef} >
                           <div className="flex bg-[#f2f2f2] py-4 px-5 md:px-10 w-[100%] items-center" onClick={(e) => e.stopPropagation()}>
                             <div className='w-[70%] md:w-[50%] mx-auto px-5 flex items-center bg-white rounded-lg border border-gray-300'>
-                              <input type="text" placeholder="Search for product" className='w-[100%]  p-3 focus:outline-none focus:border-transparent' value={keyword} onChange={(e) => setKeyword(e.target.value)}/>
+                              <input type="text" placeholder="Search for product" className='w-[100%] text-black p-3 focus:outline-none focus:border-transparent' value={keyword} onChange={(e) => setKeyword(e.target.value)}/>
                              <FiSearch className='text-2xl text-gray-600 mx-1 hover:text-blue-700'  />
                             </div>
-                            <HiOutlineX className='text-2xl mx-5 cursor-pointer hover:text-blue-700' onClick={closeSearch}/>
+                            <HiOutlineX className='text-2xl text-black mx-5 cursor-pointer hover:text-blue-700' onClick={closeSearch}/>
                           </div> 
                         </div>
 
@@ -165,7 +204,7 @@ const Navbar = () => {
                     
                     {/* the search bar code ends here */}
 
-                    <Link to="/user"> <div className='hidden md:flex px-1 text-2xl md:text-2xl cursor-pointer hover:text-blue-700'> <HiOutlineUser /> </div> </Link>
+                    <Link to="/login"> <div className='hidden md:flex px-1 text-2xl md:text-2xl cursor-pointer hover:text-blue-700'> <HiOutlineUser /> </div> </Link>
           
               <div className='flex text-2xl items-center px-0 md:hidden' onClick={handleNav}>
                 {nav ? <div className='text-[26px] stroke-2 hover:text-blue-700'><HiOutlineX /></div> : <div className='text-[26px] stroke-2 hover:text-blue-700'><HiOutlineMenuAlt3 /></div>}
@@ -190,14 +229,9 @@ const Navbar = () => {
 
 
             <div className='mt-10 px-4 py-6 border-y-2'>
-              <Link to="/user"><h3 className='flex items-center justify-between hover:text-blue-700' onClick={handleNav}>MY ACCOUNT <span className='text-xl'><HiOutlineUser /></span></h3></Link>
+              <Link to="/login"><h3 className='flex items-center justify-between hover:text-blue-700' onClick={handleNav}>MY ACCOUNT <span className='text-xl'><HiOutlineUser /></span></h3></Link>
             </div>
 
-            <div className='flex items-center text-center mt-16'>
-                    <div className='mx-1 p-1 text-2xl stroke-2'><ImFacebook2 /></div>
-                    <div className='mx-1 p-1 text-3xl stroke-2'><FaSquareTwitter /></div>
-                    <div className='mx-1 p-1 text-3xl stroke-2'><FaSquareInstagram /></div>
-            </div>
         </div>
   {/* hamburger menu slider ends here */}
 </header>

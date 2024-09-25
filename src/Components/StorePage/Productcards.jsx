@@ -15,7 +15,7 @@ import { HiMiniAdjustmentsHorizontal, HiChevronDown } from "react-icons/hi2";
 // this is the products details fetched from json
 const products = Data.products; 
 
-// Single card code
+// Single card function code
 const Productcard = ({ product}) => {
 
   const {dispatch} = useContext(CartContext);
@@ -76,6 +76,7 @@ const Productcard = ({ product}) => {
         <p className="text-[14px] font-semibold text-blue-700 pt-2">₦{product.price}</p>
       </div>
 
+      {/* quickcart code */}
       {quickcartOpen ? (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex" >
               <div className='relative w-[70%] md:w-[40%] m-auto bg-[#ffff] py-7 px-7' ref={closeQuickcartRef}>
@@ -110,48 +111,55 @@ const Productcard = ({ product}) => {
           ) : ""}
 
 
+      {/* Quickcart confirmation code */}
+      {confirmationOpen && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex">
+                <div className="w-[70%] md:w-[40%] m-auto bg-[#ffff] py-7 px-7 text-center" ref={closeConfirmCartRef} >
+                  <h2 className="mb-2 font-semibold text-[16px] md:text-xl">Product added to cart!</h2>
+                  <Button
+                    className="mt-5 md:mt-5 text-sm w-full border-2 border-blue-700 text-black "
+                    onClick={closeQuickcartOpen}>
+                    Continue Shopping
+                  </Button>
 
-{confirmationOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex">
-          <div className="w-[70%] md:w-[40%] m-auto bg-[#ffff] py-7 px-7 text-center" ref={closeConfirmCartRef} >
-            <h2 className="mb-2 font-semibold text-[16px] md:text-xl">Product added to cart!</h2>
-            <Button
-              className="mt-5 md:mt-5 text-sm w-full border-2 border-blue-700 text-black "
-              onClick={closeQuickcartOpen}>
-              Continue Shopping
-            </Button>
+                  <Link to="/cart">
+                    <Button
+                      className="mt-5 md:mt-5 text-sm w-full bg-blue-700 text-white hover:bg-blue-800">
+                      Go to Cart
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            )}
+            {/* Quickcart confirmation code ends here */}
 
-            <Link to="/cart">
-              <Button
-                className="mt-5 md:mt-5 text-sm w-full bg-blue-700 text-white hover:bg-blue-800">
-                Go to Cart
-              </Button>
-            </Link>
+
+            <button className='px-3 py-2 w-full border-[2.5px] text-sm font-medium border-blue-700 hover:bg-blue-700 hover:text-white' 
+              onClick={toggleQuickcart}>Add to cart
+            </button>
           </div>
-        </div>
-      )}
-
-
-      <button className='px-3 py-2 w-full border-[2.5px] text-sm font-medium border-blue-700 hover:bg-blue-700 hover:text-white' 
-      onClick={toggleQuickcart}>Add to cart</button>
-    </div>
-  );
-};
+        );
+      };
 
 
 
-
+// Main function code
 const Productcards = () => {
   const [selectedCategory, setSelectedCategory] = useState('Collections');
   const [isChecked, setIsChecked] = useState([]);
   const [genderChange, setGenderChange] = useState("All")
   const [filterOptions, setFilterOptions] = useState(false);
 
-
+  // mobile filter toggle code
   const toggleFilter = () => {
     setFilterOptions(!filterOptions)
   }
-  
+
+  const filterOptionsRef = useClicktoClose(() => {
+    setFilterOptions(false)
+   })
+
+  // collection dropdown code
   const [dropdownOptions, setDropdownOptions] = useState(false);
 
 
@@ -167,26 +175,24 @@ const Productcards = () => {
 
  const closeDropdownRef = useClicktoClose(() => {
   setDropdownOptions(false)
-})
+ })
+// collection dropdown code ends here
 
- const handleFilter = () => {
-  toggleFilter();
- }
-
+// gender code 
  const handleGender = (gender) => {
   setGenderChange(gender);
  }
 
-
-  const handleCheckboxChange = (wearType) => {
+//  checkbox handle code
+ const handleCheckboxChange = (wearType) => {
     setIsChecked(prevIsChecked => 
       prevIsChecked.includes(wearType) 
         ? prevIsChecked.filter(wear => wear !== wearType) 
         : [...prevIsChecked, wearType]
     );
-  };
+ };
 
-
+  // main filteredproducts code (this is the logic to the displayed products)
   const filteredProducts = products.filter(product => {
     const matchesCategory = selectedCategory === 'Collections' || product.category === selectedCategory;
   
@@ -205,6 +211,8 @@ const Productcards = () => {
     <div className='flex 3xl:mx-auto py-20 w-full'>
       {/* This is the sidebar code */}
       <div className='hidden md:block ml-5 md:ml-10 mr-5 pt-0 md:mt-10 w-[246px]'>
+
+          {/* gender change code */}
           <ul className='text-xl font-semibold'>
               <li onClick={() => handleGender('All')} className={`py-4 cursor-pointer ${genderChange === 'All' ? 'text-blue-700' : ''}`}>All</li>
               <li onClick={() => handleGender('male')} className={`py-4 cursor-pointer ${genderChange === 'male' ? 'text-blue-700' : ''}`}>Men</li>
@@ -257,8 +265,7 @@ const Productcards = () => {
               </label>
           </div>
       </div>
-
-             {/* Checkbox code ends here */}
+      {/* Checkbox code ends here */}
       {/* Sidebar code ends here */}
 
 
@@ -266,16 +273,79 @@ const Productcards = () => {
 
 
 
-
+      {/* displayed products code and selections */}
       <div className='mt-5 md:mt-10 w-full'>
         <div className='w-full '>
           <div className='flex items-center'>
+          
 
-          <span className='md:hidden flex items-center text-lg pl-5 md:pl-10 pr-3 py-4 font-semibold text-gray-900'>Filter:</span> <div className='cursor-pointer md:hidden text-xl'><HiMiniAdjustmentsHorizontal /></div>
+          {/* Mobile filter */}
+          <span className='md:hidden relative flex items-center text-lg pl-5 md:pl-10 pr-3 py-4 font-semibold text-gray-900'>Filter:</span> <div className='cursor-pointer md:hidden text-xl' onClick={()=> toggleFilter()}><HiMiniAdjustmentsHorizontal /></div>
+          {filterOptions ? (
+            <div className='md:hidden z-70'>
+              <div className='left-0 mt-7 absolute bg-white w-full pb-10 shadow-xl border-t-2 border-black'  >
 
+            <div className='block ml-5 md:ml-10 mr-5 pt-0 md:mt-10 w-[246px]'>
+                <ul className='text-lg font-semibold'>
+                    <li onClick={() => {handleGender('All')}} className={`py-4 cursor-pointer ${genderChange === 'All' ? 'text-blue-700' : ''}`}>All</li>
+                    <li onClick={() => {handleGender('male')}} className={`py-4 cursor-pointer ${genderChange === 'male' ? 'text-blue-700' : ''}`}>Men</li>
+                    <li onClick={() => {handleGender('female')}} className={`py-4 cursor-pointer ${genderChange === 'female' ? 'text-blue-700' : ''}`}>Women</li>
+                </ul>
+
+
+            {/* This is the checkbox code in the filter mobile */}
+            <div className='font-medium'>
+                <label className="flex items-center mt-5">
+                    <input 
+                      type="checkbox" 
+                      className="hidden peer" 
+                      checked={isChecked.includes('T-shirt')} 
+                      onChange={() => handleCheckboxChange('T-shirt')} 
+                    />
+                    <div className="w-6 h-6 bg-[#f2f2f2] rounded-sm peer-checked:bg-blue-600 
+                        peer-checked:after:content-['✓'] peer-checked:after:text-white peer-checked:after:font-bold 
+                        peer-checked:after:flex peer-checked:after:justify-center peer-checked:after:items-center">
+                    </div>
+                    <span className="ml-3 text-xl text-gray-700">T-Shirts</span>
+                </label>
+
+                <label className="flex items-center mt-5">
+                    <input 
+                      type="checkbox" 
+                      className="hidden peer" 
+                      checked={isChecked.includes('Sweatshirt')} 
+                      onChange={() => handleCheckboxChange('Sweatshirt')} 
+                    />
+                    <div className="w-6 h-6 bg-[#f2f2f2] rounded-sm peer-checked:bg-blue-600 
+                        peer-checked:after:content-['✓'] peer-checked:after:text-white peer-checked:after:font-bold 
+                        peer-checked:after:flex peer-checked:after:justify-center peer-checked:after:items-center">
+                    </div>
+                    <span className="ml-3 text-xl text-gray-700">Sweatshirts</span>
+                </label>
+
+                <label className="flex items-center mt-5">
+                    <input 
+                      type="checkbox" 
+                      className="hidden peer" 
+                      checked={isChecked.includes('Hoodie')} 
+                      onChange={() => handleCheckboxChange('Hoodie')} 
+                    />
+                    <div className="w-6 h-6 bg-[#f2f2f2] rounded-sm peer-checked:bg-blue-600 
+                        peer-checked:after:content-['✓'] peer-checked:after:text-white peer-checked:after:font-bold 
+                        peer-checked:after:flex peer-checked:after:justify-center peer-checked:after:items-center">
+                    </div>
+                    <span className="ml-3 text-xl text-gray-700">Hoodies</span>
+                </label>
+            </div>
+          </div>
+
+              </div>
+            </div>
+          ) : ""} 
+          {/* Mobile filter ends here */}
 
          
-          {/* This is the dropdown code */} 
+          {/* This is the collections dropdown code */} 
           <div className="relative px-7 py-2 inline-block text-left" ref={closeDropdownRef}>
             <div>
               <button
@@ -315,25 +385,26 @@ const Productcards = () => {
           </div>
 
       </div>
-      {/* ends here */}
+      {/* collection dropdown ends here */}
 
-            <div className='pb-10 px-5 md:px-10 md:pr-10 mt-5 md:mt-10 mr-0 md:mr-10 min-w-auto w-full'>
-              <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-12 w-full'>
-                  {filteredProducts.map((product, id) => (
-                  <Productcard 
-                      product={product}
-                      key={id}/>
-                  ))}
+      {/* Products to be displayed code */}
+      <div className='pb-10 px-5 md:px-10 md:pr-10 mt-5 md:mt-10 mr-0 md:mr-10 min-w-auto w-full'>
+        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-12 w-full'>
+            {filteredProducts.map((product, id) => (
+            <Productcard 
+                product={product}
+                key={id}/>
+            ))}
 
-                  {filteredProducts.length === 0 ? 
-                  <div className='text-xl font-normal m-20 md:mx-auto w-full md:w-full'>No product found</div> : ""}
-              </div>
-
-              {/* <p className='items-center text-center'>This is a nav button</p> */}
-            </div>
+            {filteredProducts.length === 0 ? 
+            <div className='text-xl font-normal m-20 md:mx-auto w-full md:w-full'>No product found</div> : ""}
         </div>
+
       </div>
-      {/* code ends here */}
+    </div>
+  </div>
+      {/* products code ends here */}
+    
     </div>
   );
 };

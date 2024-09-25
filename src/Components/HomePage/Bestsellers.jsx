@@ -45,10 +45,10 @@ const Productcard = ({ product}) => {
 const Bestsellers = () => {
   return (
     // this is the component parent div //
-    <div className='flex flex-col items-center h-auto  mx-auto mt-12 md:mt-20 px-5 md:px-10'> 
+    <div className='flex flex-col items-center h-auto mx-auto mt-12 md:mt-20 px-5 md:px-10'> 
         <h1 className='mt-7 text-2xl md:text-3xl lg:text-3xl font-semibold text-blue-700'>Our Best Sellers</h1>
         
-        <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10 p-10 mt-5 md:mt-10'>
+        <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10 p-5 mt-5 md:mt-10'>
           
         {BestsellersData.map((product, id) => (
                   <Productcard 

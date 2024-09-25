@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { CartContext, ProductprofileContext } from '../Components/Functions/ContextProvider';
 import { HiMiniMinusSmall, HiMiniPlusSmall } from "react-icons/hi2";
 import { totalCart, totalCartAmount } from '../Components/Functions/CartReducer';
 import Button from '../Components/Button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 
@@ -75,6 +75,11 @@ const CartProduct = ({ product }) => {
 };
 
 const Cart = () => {
+
+  const { pathname } = useLocation();
+  useEffect(() => {
+     window.scrollTo(0,0);
+  }, [pathname])
   
   const { cart } = useContext(CartContext);
 
@@ -123,7 +128,7 @@ const Cart = () => {
 
                   <div className='flex flex-col justify-between text-sm items-end'>
                     <p className='my-2'>{totalCart(cart)}</p>
-                    <p className='my-2'>{totalCartAmount(cart)}</p>
+                    <p className='my-2'>₦{totalCartAmount(cart)}</p>
                   </div>
                 </div>
 

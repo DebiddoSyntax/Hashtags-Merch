@@ -5,7 +5,9 @@ module.exports = {
     extend: {
       fontFamily:{
         // josefin: ["Josefin", "Sans"],
-        inria: ["Inria Sans", "Sans"]
+        inria: ["Inria Sans", "Sans"],
+        irish: ["Irish Grover"],
+        rowdies: ["Rowdies", "sans-serif"]
       }
     },
   },

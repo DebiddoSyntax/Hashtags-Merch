@@ -15,9 +15,9 @@ const HashtagsVideo = () => {
 
 const Gallery = () => {
   return (
-    <div className='flex flex-col justify-between items-center mt-24 px-5 md:px-10'>
+    <div className='flex flex-col justify-between items-center mt-32 px-5 md:px-10 bg-[#f2f2f2f2] pt-7 md:pt-14 pb-14 md:pb-28'>
       <h1 className='mt-5 text-2xl md:text-3xl lg:text-3xl font-semibold text-blue-700'>Our Gallery</h1>
-      <p className='mt-5 md:mt-7 text-center text-lg md:text-xl font-semibold'>To feature on our gallery, take the best pictures with our wears, upload it on any social media with the hashtag <span className='font-bold text-blue-700'>#TrendwithHashtagsMerch</span></p>
+      <p className='mt-5 md:mt-7 text-center text-sm md:text-xl font-semibold'>To feature on our gallery, take the best pictures with our wears, upload it on any social media with the hashtag <span className='font-bold text-blue-700'>#TrendwithHashtagsMerch</span></p>
       
       
           <div className='px-0 mt-10'>

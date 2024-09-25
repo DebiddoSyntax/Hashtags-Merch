@@ -8,6 +8,7 @@ import Cart from './Mainpages/Cart';
 import Productpage from './Mainpages/Productpage';
 import Play from './Mainpages/Play'
 import Userpage from './Mainpages/Userpage';
+import Loginpage from './Mainpages/Loginpage';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/productpage" element={<Productpage />} />
         <Route path="/play" element={<Play />} />
+        <Route path="/login" element={<Loginpage />} />
         <Route path="/user" element={<Userpage />} />
       </Routes>
       <Footer />

@@ -1,34 +1,47 @@
-import React from 'react'
-import Button from '../Components/Button'
+import {React, useEffect} from 'react'
+import { Link, useLocation } from 'react-router-dom';
+
 
 const Userpage = () => {
+    const { pathname } = useLocation();
+        useEffect(() => {
+        window.scrollTo(0,0);
+        }, [pathname]);
+
+
   return (
-    <div className='pt-20'>
-        <div className='px-5 md:px-20 my-10 mx-auto'>
-            <h1 className='text-3xl font-semibold text-blue-700'>Log In</h1>
-            <h3 className='my-3 font-semibold text-gray-500'>Welcome Back! Enter your details</h3>
-            <form action="#" method="POST" className=''>
-                <div className="mb-5 mt-10 items-start text-left w-full">
-                    <label htmlFor="username" className="text-sm font-semibold text-black">Username</label>
-                    <input type="text" id="username" name="username" placeholder='Enter your username'
-                            className=" w-full p-3 border mt-2 border-gray-300 rounded-md focus:outline-none" >
-                    </input>
-                </div>
+    <div className='py-20 px-5 md:px-10'>
+        <div className='pt-3 md:pt-7 grid grid-cols-1 md:grid-cols-3 gap-10'>
+            <div className='col-span-2'>
+                <h2 className='py-3 border-b-2 border-black font-semibold text-xl uppercase'>Account Details</h2>
+                <div className='grid grid-cols-3 gap-2'>
+                    <div className='col-span-2'>
+                        <h4 className='text-lg font-semibold mt-5 md:mt-3'>Name</h4>
+                        <p className='text-lg font-light'>Michael David</p>
 
-                <div className="mb-5 mt-7 items-start text-left w-full">
-                    <label htmlFor="password" className="text-sm font-semibold text-black">Password</label>
-                    <input type="password" id="username" name="password" placeholder='Enter your password'
-                            className=" w-full p-3 border mt-2 border-gray-300 rounded-md focus:outline-none" >
-                    </input>
-                </div>
 
-                <Button type='submit' className=" mt-5 md:mt-10 text-sm items-center h-full w-full place-items-center bg-blue-700 text-white hover:bg-blue-800">
-                    Log In
-                </Button>
-            
-            </form>
-            <p className='mx-auto text-center text-lg font-semibold mt-7'>Don’t have an account? <span className='text-blue-700'>Sign up</span></p>
+                        <h4 className='text-lg font-semibold mt-5 md:mt-3'>Address</h4>
+                        <p className='text-lg font-light'>No. 9 Florentine street, Lagos State, Nigeria, 10001</p>
+
+                        <h4 className='text-lg font-semibold mt-5 md:mt-3'>Email</h4>
+                        <p className='text-lg font-light no-underline'>Davidmichael@gmail.com</p>
+
+                        <h4 className='text-lg font-semibold mt-5 md:mt-3'>Phone number</h4>
+                        <p className='text-lg font-light no-underline'>+2349138631824</p>
+                    </div> 
+                    <p className='text-lg font-semibold text-blue-700 text-left mt-3 w-full cursor-pointer'>view payment details</p>
+                </div>
+            </div>
+
+
+            <div>
+                <h2 className='py-3 border-b-2 border-black  font-semibold text-xl uppercase'>Order History</h2>
+                <p className='text-lg font-light italic mt-5 md:mt-3'>No order history</p>
+            </div>
         </div>
+        <Link to='/login'>
+            <div className='mt-10 text-xl text-red-600 font-semibold cursor-pointer w-24'>Sign out</div>
+        </Link>
     </div>
   )
 }
