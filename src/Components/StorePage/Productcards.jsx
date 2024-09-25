@@ -155,9 +155,9 @@ const Productcards = () => {
     setFilterOptions(!filterOptions)
   }
 
-  const filterOptionsRef = useClicktoClose(() => {
-    setFilterOptions(false)
-   })
+  // const filterOptionsRef = useClicktoClose(() => {
+  //   setFilterOptions(false)
+  //  })
 
   // collection dropdown code
   const [dropdownOptions, setDropdownOptions] = useState(false);
