@@ -46,6 +46,11 @@ const Navbar = () => {
 
   const location = useLocation();
 
+  const { pathname } = useLocation();
+  useEffect(() => {
+     window.scrollTo(0,0);
+  }, [pathname])
+
   // this is the nav menu hamburger states
   const [nav, setNav] = useState(false);
   const handleNav = () => {
