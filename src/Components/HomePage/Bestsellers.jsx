@@ -22,7 +22,7 @@ const Productcard = ({ product}) => {
                   <img className='h-40 w-40 md:h-64 md:w-64 object-contain' src={product.image} alt={product.title} />
                 </div>
               </div>
-            </Link>
+           
   
   
         <div className="py-5 max-w-full">
@@ -35,6 +35,7 @@ const Productcard = ({ product}) => {
                 <FaStar color='#FFD700' fontSize={18}/>
               </div>
         </div>
+        </Link>
   
         
       </div>
