@@ -5,21 +5,23 @@
     "products": [
     { 
         "id": 1,
-        "image": "/img/Butterflytshirt.png", 
-        "imageBack": "/img/Butterflyback.png",
-        "title": "Butterfly T-shirt", 
-        "description": "Happiness is like a butterfly, the more you chase it, the more it will evade you, but it you notice the other things around you, it will gently come and sit on your shoulder.",
+        "image": "/img/Brown double colored hoodie.png", 
+        "imageBack": "/img/Brown double colored hoodie.png",
+        "title": "Brown double colored hoodie", 
+        "description": "Embrace the Wildthoughts merch drop—crafted for free spirits. Each piece invites you to step boldly into your authentic self, celebrating individuality and fearless expression. Wear your thoughts, make a statement, and live unapologetically wild.",
         "price": 14340, 
-        "category": "Butterfly", 
-        "wear": "T-shirt", 
+        "category": "Wildthought", 
+        "wear": "Hoodie", 
         "gender":"male",
         "quantity": 1
     },
 
     { 
         "id": 2,
-        "image": "/img/Green.png", 
-        "title": "Butterfly Sweatshirt", 
+        "image": "/img/Plain blue sweatshirt.png", 
+        "imageBack": "/img/Plain blue sweatshirt.png",
+        "title": "Plain blue sweatshirt", 
+        "description": "Embrace the Wildthoughts merch drop—crafted for free spirits. Each piece invites you to step boldly into your authentic self, celebrating individuality and fearless expression. Wear your thoughts, make a statement, and live unapologetically wild.",
         "price": 18220, 
         "category": "Wildthought", 
         "wear": "Sweatshirt", 
@@ -29,8 +31,10 @@
 
     { 
         "id": 3,
-        "image": "/img/Purple.png", 
-        "title": "Butterfly Hoodie", 
+        "image": "/img/Black crop top hoodie.png", 
+        "imageBack": "/img/Black crop top hoodie.png", 
+        "title": "Black crop top hoodie",
+        "description": "Happiness is like a butterfly, the more you chase it, the more it will evade you, but it you notice the other things around you, it will gently come and sit on your shoulder.", 
         "price": 20876, 
         "category": "Butterfly", 
         "wear": "Hoodie", 
@@ -40,57 +44,92 @@
 
     { 
         "id": 4,
-        "image": "/img/Butterflytshirt.png", 
-        "title": "Wildthought T-shirt", 
+        "image": "/img/Brown crop sweatshirt.png", 
+        "imageBack": "/img/Brown crop sweatshirt.png", 
+        "title": "Brown crop sweatshirt", 
+        "description": "Embrace the Wildthoughts merch drop—crafted for free spirits. Each piece invites you to step boldly into your authentic self, celebrating individuality and fearless expression. Wear your thoughts, make a statement, and live unapologetically wild.",
         "price": 23450, 
         "category": "Wildthought", 
-        "wear": "T-shirt", 
+        "wear": "Sweatshirt", 
         "gender":"female",
         "quantity": 1
     },
 
     { 
         "id": 5,
-        "image": "/img/Butterflytshirt.png", 
-        "title": "Wildthought T-shirt", 
+        "image": "/img/Green crop sweatshirt.png", 
+        "imageBack": "/img/Green crop sweatshirt.png", 
+        "title": "Green crop sweatshirt", 
         "description": "Happiness is like a butterfly, the more you chase it, the more it will evade you, but it you notice the other things around you, it will gently come and sit on your shoulder.",
         "price": 14340, 
         "category": "Butterfly", 
-        "wear": "T-shirt", 
-        "gender":"male",
+        "wear": "Sweatshirt", 
+        "gender":"female",
         "quantity": 1
     },
 
     { 
         "id": 6,
-        "image": "/img/Purple.png", 
-        "title": "Wildthought Sweatshirt", 
+        "image": "/img/Check sleeves hoodie.png", 
+        "imageBack": "/img/Check sleeves hoodie.png", 
+        "title": "Check sleeves hoodie", 
+        "description": "Embrace the Wildthoughts merch drop—crafted for free spirits. Each piece invites you to step boldly into your authentic self, celebrating individuality and fearless expression. Wear your thoughts, make a statement, and live unapologetically wild.",
         "price": 18220, 
         "category": "Wildthought", 
-        "wear": "Sweatshirt", 
-        "gender":"male",
-        "quantity": 1
-    },
-
-    { 
-        "id": 7,
-        "image": "/img/Green.png", 
-        "title": " Hoodie", 
-        "price": 20876, 
-        "category": "Butterfly", 
         "wear": "Hoodie", 
         "gender":"female",
         "quantity": 1
     },
 
     { 
+        "id": 7,
+        "image": "/img/Green.png", 
+        "imageBack": "/img/Green.png", 
+        "title": " Plain green hoodie", 
+        "description": "Happiness is like a butterfly, the more you chase it, the more it will evade you, but it you notice the other things around you, it will gently come and sit on your shoulder.",
+        "price": 20876, 
+        "category": "Butterfly", 
+        "wear": "Hoodie", 
+        "gender":"male",
+        "quantity": 1
+    },
+
+    { 
         "id": 8,
-        "image": "/img/Butterflytshirt.png", 
-        "title": "T-shirt", 
+        "image": "/img/White double colored hoodie.png", 
+        "imageBack": "/img/White double colored hoodie.png", 
+        "title": "White double colored hoodie", 
+        "description": "Embrace the Wildthoughts merch drop—crafted for free spirits. Each piece invites you to step boldly into your authentic self, celebrating individuality and fearless expression. Wear your thoughts, make a statement, and live unapologetically wild.",
         "price": 23450, 
         "category": "Wildthought", 
+        "wear": "Hoodie", 
+        "gender":"male",
+        "quantity": 1
+    },
+
+    { 
+        "id": 8,
+        "image": "/img/Plain blue t-shirt.png", 
+        "imageBack": "/img/Plain blue t-shirt.png", 
+        "title": "Plain blue sweatshirt",
+        "description": "Happiness is like a butterfly, the more you chase it, the more it will evade you, but it you notice the other things around you, it will gently come and sit on your shoulder.", 
+        "price": 23450, 
+        "category": "Butterfly", 
         "wear": "T-shirt", 
         "gender":"female",
+        "quantity": 1
+    },
+
+    { 
+        "id": 8,
+        "image": "/img/Plain brown t-shirt.png", 
+        "imageBack": "/img/Plain brown t-shirt.png", 
+        "title": "Plain brown t-shirt", 
+        "description": "Happiness is like a butterfly, the more you chase it, the more it will evade you, but it you notice the other things around you, it will gently come and sit on your shoulder.",
+        "price": 23450, 
+        "category": "Butterfly", 
+        "wear": "T-shirt", 
+        "gender":"male",
         "quantity": 1
     }
 

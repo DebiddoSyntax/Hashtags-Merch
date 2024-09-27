@@ -6,7 +6,8 @@ import useClicktoClose from '../Functions/useClicktoClose';
 import { Link } from 'react-router-dom';
 import Button from '../Button';
 import { HiOutlineX } from "react-icons/hi";
-import { HiMiniAdjustmentsHorizontal, HiChevronDown } from "react-icons/hi2";
+import { HiChevronDown } from "react-icons/hi2";
+import { LuListFilter } from "react-icons/lu";
 
 
 
@@ -280,7 +281,7 @@ const Productcards = () => {
           
 
           {/* Mobile filter */}
-          <span className='md:hidden relative flex items-center text-lg pl-5 md:pl-10 pr-3 py-4 font-semibold text-gray-900'>Filter:</span> <div className='cursor-pointer md:hidden text-xl' onClick={()=> toggleFilter()}><HiMiniAdjustmentsHorizontal /></div>
+          <span className='md:hidden relative flex items-center text-lg pl-5 md:pl-10 pr-3 py-4 font-semibold text-gray-900'>Filter:</span> <div className='cursor-pointer md:hidden text-xl' onClick={()=> toggleFilter()}><LuListFilter /></div>
           {filterOptions ? (
             <div className='md:hidden z-70'>
               <div className='left-0 mt-7 absolute bg-white w-full pb-10 shadow-xl border-t-2 border-black'  >
