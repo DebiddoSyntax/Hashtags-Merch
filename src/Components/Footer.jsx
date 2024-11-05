@@ -47,10 +47,10 @@ const Footer = () => {
 
 
 
-                <div className='mt-5 mx-auto items-center w-[80%] md:w-[70%]'>
-                    <h2 className='font-semibold text-white text-xl md:text-2xl py-1 text-center'>Quick Links</h2>
+                <div className='mt-5 mx-auto items-center w-[100%] md:w-[70%]'>
+                    <h2 className='font-semibold text-white text-xl md:text-2xl py-1 text-left md:text-center px-2'>Quick Links</h2>
 
-                    <ul className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 pt-3 md:pt-6 text-lg md:text-xl font-normal md:font-normal text-white text-center'>
+                    <ul className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-2 md:gap-6 pt-3 md:pt-6 text-lg md:text-xl font-normal md:font-normal text-white text-left md:text-center'>
                         <li className='p-2 hover:text-blue-700'>About us</li>
                         <li className='p-2 hover:text-blue-700'><Link to="/contact">Contact us</Link></li>
                         <li className='p-2 hover:text-blue-700'>Size Guide</li>
